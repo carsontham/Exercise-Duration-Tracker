@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Log</title>
+    <link rel = "stylesheet" href = "static/style.css">
+    <script src="https://kit.fontawesome.com/e5bb12379f.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src= "{{url_for ('static', filename= 'log.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <li class = "warning"> {{ msg }}</li>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <div class = "log-container">
+        <div class="sidebar-container">
+            <i class="fas fa-user"></i>
+            <div>
+                <p> My id is {{ current_user.get_id() }}</p>
+                <p> My gender is {{ current_user.info()['gender'] }}</p>
+                <p> My dob is {{ current_user.info()['DoB'] }}</p> 
+                <p> My weight is {{ current_user.info()['weight'] }}</p>
+            </div>
+        </div>
+
+        <div class= "calorie-consumption-container">
+
+            <h1>Calorie Consumption</h1>
+            <p>Input Date/Time, your weight, and time spent on each exercise</p>
+
+            <label for="" class="datetime_label">Date & Time <input type="datetime-local" name="datetime" class="datetime_input" required> e.g. 2021-01-22T15:00</label><br><br>
+            <label for="" class="log_weight_label">Weight <input type="number" name="weight" class="log_weight_input" placeholder="0" required> kilograms</label><br><br>
+            <label for="" class="walking_label">Walking <input type="number" name="walking" class="walking_input" placeholder="0" required> minutes</label><br><br>
+            <label for="" class="running_label">Running <input type="number" name="running" class="running_input" placeholder="0" required> minutes</label><br><br>
+            <label for="" class="swimming_label">Swimming <input type="number" name="swimming" class="swimming_input" placeholder="0" required> minutes</label><br><br>
+            <label for="" class="bicycle_label">Bicycling <input type="number" name="bicycling" class="bicycling_input" placeholder="0" required> minutes</label><br><br>
+            <button class="r4" onclick= 'postdata()' type="submit" id="submitBtn">Submit</button> <br><br>
+
+            <div class= "calculation-container">
+                <h2>Total calories to be consumed: </h2>
+                <div class="output_space">
+                    <h2>0</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,191 @@
+body {background-color: rgb(69, 200, 202)}
+
+.header-bar{
+    background-color: rgb(52, 232, 235);
+    padding: 0px 10px;
+	width: 980px;
+	height: 150px;
+	top: 0;
+	order: 0;      
+}
+
+.logo {
+    width: px;
+	height: 50px;
+	margin-top: 10px;
+	margin-left: 0px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    align-items: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav-items {
+	font-size: 18px;
+	list-style: none;                   
+	font-family: 'Dosis', sans-serif;
+	color: #242834;
+	padding-left: 350px;
+	padding-right: 10px;
+    padding-top: 50px;
+}
+
+.container {
+    border: 2px solid rgb(232,232,232);
+    width: 600px; 
+    margin-top: 20px;
+    margin-left: 40px;             
+    display: grid;              
+    grid-template-rows: repeat(2, 0fr);    
+    grid-template-columns: repeat(3, 1fr);
+    background-color: white;
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    align-items: center;
+    padding: 10px;
+}
+
+#loginTab {
+    grid-column-start: 1;
+    grid-column-end: 2;            
+    font-size: 20px;
+    color: rgb(10, 10, 10);
+    text-align: center;
+    border: white;
+    border-bottom: 2px solid rgb(66,103,178);
+    background-color: white;
+    margin-top: 20px;
+}
+
+#loginTab:hover {
+    cursor: pointer;
+}
+
+#registerTab {
+    grid-column-start: 2;
+    grid-column-end: 3;            
+    font-size: 20px;
+    color: rgb(10, 10, 10);
+    text-align: center;
+    border: white;
+    background-color: white;
+    border-bottom: 2px solid rgb(232,232,232);
+    margin-top: 20px;
+    color: rgb(232,232,232);
+}
+
+#registerTab:hover {
+    cursor: pointer;
+}
+
+.form{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    box-sizing: border-box;
+}
+
+.labels{
+    font-size: 20px;
+    color: rgb(10, 10, 10);
+    text-align: left;
+}
+
+.inputs{          
+    font-size: 20px;
+    color: rgb(10, 10, 10);
+    text-align: left;
+    border: white;
+    border-bottom: 2px solid rgb(232,232,232);
+    margin-top: 10px;
+    outline: none;
+    width: 590px;
+}
+
+.inputs:hover{
+    border-bottom: 3px solid darkblue;
+}
+
+.r3{
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    border: white;
+    background-color: rgb(66,103,178);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 590px;
+    height: 40px;
+}
+
+.r3:hover {
+    cursor: pointer;
+    background-color: rgb(46, 124, 126);
+}
+
+/* codes for log.html page */
+
+.log-container {                            /* main container */
+    background-color: white;
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 80% 20%;
+}
+.sidebar-container{                         /*side bar container */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border: none;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.fas {                                      /* Icon size */
+	color: #29553b;
+	font-size: 80px;
+}
+
+.calorie-consumption-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border: none;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+#submitBtn {
+    height: 30px;
+    width: 60px;
+    background-color: rgb(66,103,178);
+    color: white;
+    border: none;
+}
+
+#submitBtn:hover {
+    background-color: rgb(46, 124, 126);
+    color:black;
+    cursor: pointer;
+}
+
+.calculation-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.output-space{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.warning{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    text-align: left;
+}

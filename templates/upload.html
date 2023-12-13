@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Upload</title>
+    <link rel = "stylesheet" href = "static/style.css">
+    <script src="https://kit.fontawesome.com/e5bb12379f.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<div class = "log-container">
+    <div class="sidebar-container">
+        <i class="fas fa-user"></i>
+        <div> <p> My id is: <br>admin@fitwll.com </p> </div>
+        <div> <p> My role is system admin <br>and web master </p></div> 
+    </div>
+
+    <form action="{{url_for ('upload') }}" method="POST" enctype="multipart/form-data">
+        <h1>Upload recordings</h1>
+        <p>Upload CSV file e.g. "admin@fitwell, 2021-01-17-T01:00, 97,20,0,0,29"</p>
+        <div>
+            <input type="file" name= "csvfile" required> 
+        </div><br>
+        <button class="r3" type="submit" id="uploadBtn">Upload</button> <br><br>
+    </form>
+</div>
+{% endblock%}

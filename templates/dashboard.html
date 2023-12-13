@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Dashboard</title>
+    <link rel = "stylesheet" href = "static/style.css">
+    <script src="https://kit.fontawesome.com/e5bb12379f.js" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src= "{{url_for ('static', filename= 'dashboard.js') }}"></script>
+    <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
+
+{% endblock %}
+
+{% block content %}
+<div class = "log-container">
+    <div class="sidebar-container">
+        <i class="fas fa-user"></i>
+        <div> 
+            <p> My id is {{ current_user.get_id() }}</p>
+            <p> My gender is {{ current_user.info()['gender'] }}</p>
+            <p> My dob is {{ current_user.info()['DoB'] }}</p> 
+            <p> My weight is {{ current_user.info()['weight'] }}</p>
+        </div> 
+    </div>
+    <div class= "calorie-consumption-container">
+        <h1>Calorie Log</h1>
+        <p>Last Seven Days Logs</p>
+        <div id = "my_dataviz"></div>
+        <!--<svg width='480' height = '400'></svg> -->
+    </div>
+</div>
+
+<!--<script>
+lineChart()
+</script> -->
+{% endblock %}

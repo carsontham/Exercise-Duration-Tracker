@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Register</title>
+<link rel = "stylesheet" href = "../static/style.css">
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <li class = "warning"> {{ msg }}</li>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <div class = "container">
+
+        <button class="r1" type="button" id="loginTab" style="border-bottom: 2px solid rgb(232,232,232); color: rgb(232,232,232)" 
+        onclick= "document.location= 'login' ">Login</button>
+        <button class="r2" type="button" id="registerTab" style="border-bottom: 2px solid rgb(66,103,178); color: black" 
+        onclick="document.location= 'register' ">Register</button> 
+    
+        <form class= "form" action="{{url_for ('register') }}" method="POST">
+            <label for="" class="labels" name="email_label">Enter your email:</label> <br>
+            <input type="email" class="inputs" name="email" required> <br>
+            <label for="" class="labels" name="password_label">Enter your password:</label> <br>
+            <input type="password" class="inputs" name= "password" required> <br>
+            <label for="" class="labels" name= "gender_label">Enter your gender (M or F):</label> <br>
+            <input type="text" class="inputs" name="gender" pattern="M|F" required> <br>
+            <label for="" class="labels">Enter your weight:</label> <br>
+            <input type="number" class= "inputs" name="weight" required> <br>
+            <label for="" class="labels">Enter your height:</label> <br>
+            <input type="number" class= "inputs" name="height" required> <br>
+            <label for="" class="labels">Enter your Date of Birth:</label> <br>
+            <input type="text" class= "inputs" name="DoB" required>
+            <label for="DoB">e.g. 1989-01-22</label>
+            <button class="r3" type="submit" id="registerBtn">REGISTER</button> 
+        </form> 
+    </div> 
+{% endblock %}

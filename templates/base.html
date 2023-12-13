@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block head %} {% endblock %}
+    </head>
+
+    <body>
+        <div class="header-bar">
+            <nav class="nav">
+                <div class="logo">
+                    <img width="200" height ="80" src="static/logo.png">
+                </div>
+                <div class="nav-items">
+                    {% if not current_user.is_authenticated %}
+                    <a href="{{url_for ('register') }}">Register</a>
+                    <a href="{{url_for ('login') }}">Login</a>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                    <a href="{{url_for ('log') }}">Log</a>
+                    <a href="{{url_for ('dashboard') }}">Dashboard</a>
+                        {% if current_user.get_id() == 'admin@fitwell.com' %}  
+                    <a href="{{url_for ('upload') }}">Upload</a>
+                        {% endif %}
+                    <a href="{{url_for ('feedback') }}">Feedback</a>  
+                    <a href="{{url_for ('logout') }}">Logout</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div> 
+        {% block content %} {% endblock %}
+    </body>
+</html>
